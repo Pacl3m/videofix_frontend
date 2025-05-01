@@ -1,0 +1,38 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: white;
+    padding: 10px 96px;
+    height: 108px;
+
+
+    .logo {
+        img {
+            width: 200px;
+            height: 32px;
+        }
+
+    }
+
+    .loginButton {
+        button {
+            height: 48px;
+            width: 99px;
+            border-radius: 40px;
+            background-color: rgb(46, 62, 223);
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        // margin-left: 1.5rem;
+        // color: white;
+        // text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
