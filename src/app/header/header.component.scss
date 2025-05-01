@@ -29,9 +29,11 @@
         font-size: 18px;
         font-weight: 700;
         font-family: 'DM Sans';
+        transition: 200ms;
 
         &:hover {
             background-color: rgb(77, 89, 224);
+            transform: scale(1.02);
         }
     }
 }
