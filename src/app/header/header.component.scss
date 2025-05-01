@@ -17,22 +17,21 @@
     }
 
     .loginButton {
-        button {
-            height: 48px;
-            width: 99px;
-            border-radius: 40px;
-            background-color: rgb(46, 62, 223);
-            color: white;
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        // margin-left: 1.5rem;
-        // color: white;
-        // text-decoration: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        width: 99px;
+        border-radius: 40px;
+        background-color: rgb(46, 62, 223);
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: 'DM Sans';
 
         &:hover {
-            text-decoration: underline;
+            background-color: rgb(77, 89, 224);
         }
     }
 }
