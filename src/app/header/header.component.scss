@@ -10,7 +10,6 @@
     left: 5rem;
     right: 5rem;
 
-
     .logo {
         img {
             width: 200px;
@@ -19,6 +18,7 @@
     }
 
     .loginButton {
+        text-decoration: none;
         cursor: pointer;
         display: flex;
         justify-content: center;
