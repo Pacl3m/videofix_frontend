@@ -66,6 +66,11 @@
                 background-color: rgb(77, 89, 224);
                 transform: scale(1.02);
             }
+
+            &:active {
+                transform: scale(0.97) translateY(1px);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
         }
     }
 }

@@ -1,0 +1,20 @@
+<div class="background">
+    <div class="content">
+        <h2>Log in</h2>
+        <form>
+            <input formControlName="email" placeholder="Email" />
+            <div class="inputContainer">
+                <input formControlName="password" [type]="type" placeholder="Password">
+                <span (click)="togglePasswordVisibility()" class="the-eye visibility_on"
+                    [ngClass]="{'visibility_on': !isText, 'visibility_off': isText }"></span>
+            </div>
+            <button class="loginButton" type="submit">Log in</button>
+        </form>
+        <div class="contentBotton">
+            <a href="">Forgot password?</a>
+            <span>
+                <p>New to Videoflix?</p><a href="">Sign Up now</a>
+            </span>
+        </div>
+    </div>
+</div>
