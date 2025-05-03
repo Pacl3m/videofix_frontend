@@ -1,4 +1,4 @@
-<div class="background">
+<div *ngIf="isLogin" class="background">
     <div class="content">
         <h2>Log in</h2>
         <form>
@@ -11,10 +11,23 @@
             <button class="loginButton" type="submit">Log in</button>
         </form>
         <div class="contentBotton">
-            <a href="">Forgot password?</a>
+            <a routerLink="/forgotPW">Forgot password?</a>
             <span>
-                <p>New to Videoflix?</p><a href="">Sign Up now</a>
+                <p>New to Videoflix?</p><a routerLink="/forgotPW">Sign Up now</a>
             </span>
         </div>
+    </div>
+</div>
+
+<div *ngIf="isForgotPW" class="background">
+    <div class="content">
+        <h2>Forgot your<br>password?</h2>
+        <span class="secondHeadline">We will send you an email with instructions to reset your password.</span>
+        <form>
+            <input formControlName="email" placeholder="Email" />
+            <div class="inputContainer">
+                <button class="loginButton" type="submit">Send Email</button>
+            </div>
+        </form>
     </div>
 </div>
