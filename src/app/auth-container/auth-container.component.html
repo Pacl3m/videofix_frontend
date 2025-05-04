@@ -27,7 +27,7 @@
                 </div>
 
             </div>
-            <button class="loginButton" type="submit">Log in</button>
+            <button [disabled]="!logInForm.valid" class="loginButton" type="submit">Log in</button>
         </form>
         <div class="contentBotton">
             <a routerLink="/forgotPW">Forgot password?</a>
@@ -107,7 +107,45 @@
                 </div>
 
             </div>
-            <button class="loginButton" type="submit">Get Started</button>
+            <button [disabled]="!signUpForm.valid" class="loginButton" type="submit">Get Started</button>
+        </form>
+    </div>
+</div>
+
+<!-- reset password page -->
+
+<div *ngIf="isResetPW" class="background">
+    <div class="content">
+        <h2>Reset password</h2>
+        <span class="secondHeadline">Create a new password for your <span
+                style="color: rgb(46, 62, 223);">Videoflix</span> account.</span>
+        <form [formGroup]="resetPWForm">
+
+            <div class="inputContainer">
+                <input formControlName="password" [type]="type" placeholder="Enter a password">
+                <span (click)="togglePasswordVisibility()" class="the-eye"
+                    [ngClass]="{'visibility_on': !isText, 'visibility_off': isText }"></span>
+
+                <div class="error"
+                    *ngIf="resetPWForm.get('password')?.hasError('minlength') && resetPWForm.get('password')?.touched">
+                    <img src="../../assets/img/errors/warning.svg" alt="Error Icon" width="14" height="12">
+                    Password must be at least 8 characters long.
+                </div>
+
+            </div>
+            <div class="inputContainer">
+                <input formControlName="repeated_password" [type]="type" placeholder="Confirm password">
+                <span (click)="togglePasswordVisibility()" class="the-eye"
+                    [ngClass]="{'visibility_on': !isText, 'visibility_off': isText }"></span>
+
+                <div class="error"
+                    *ngIf="resetPWForm.errors?.['passwordsDontMatch'] && resetPWForm.get('repeated_password')?.touched">
+                    <img src="../../assets/img/errors/warning.svg" alt="Error Icon" width="14" height="12"> Passwords do
+                    not match.
+                </div>
+
+            </div>
+            <button [disabled]="!resetPWForm.valid" class="loginButton" type="submit">Reset my password</button>
         </form>
     </div>
 </div>

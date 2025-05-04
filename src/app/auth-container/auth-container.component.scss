@@ -75,14 +75,21 @@
                 transition: 200ms;
                 width: fit-content;
 
-                &:hover {
+                &:not(:disabled):hover {
                     background-color: rgb(77, 89, 224);
                     transform: scale(1.02);
                 }
 
-                &:active {
+                &:not(:disabled):active {
                     transform: scale(0.97) translateY(1px);
                     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                }
+
+                &:disabled {
+                    background-color: rgb(94, 94, 94);
+                    cursor: not-allowed;
+                    transform: none;
+                    box-shadow: none;
                 }
             }
 

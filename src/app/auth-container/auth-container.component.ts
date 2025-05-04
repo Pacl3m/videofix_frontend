@@ -14,10 +14,12 @@ export class AuthContainerComponent {
   signUpForm: FormGroup;
   forgotPasswordForm: FormGroup;
   logInForm: FormGroup;
+  resetPWForm: FormGroup;
 
   @Input() isLogin: boolean = false;
   @Input() isForgotPW: boolean = false;
   @Input() isSignUp: boolean = false;
+  @Input() isResetPW: boolean = false;
 
   isText: boolean = false;
   type: string = 'password';
@@ -38,6 +40,11 @@ export class AuthContainerComponent {
     this.forgotPasswordForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]]
     });
+
+    this.resetPWForm = this.fb.group({
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      repeated_password: ['', Validators.required]
+    }, { validators: this.matchPasswords('password', 'repeated_password') });
   }
 
   togglePasswordVisibility() {
