@@ -58,7 +58,7 @@
             </div>
 
             <div class="inputContainer">
-                <button class="loginButton" type="submit">Send Email</button>
+                <button [disabled]="!forgotPasswordForm.valid" class="loginButton" type="submit">Send Email</button>
             </div>
         </form>
     </div>
