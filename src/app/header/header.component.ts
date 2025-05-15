@@ -13,12 +13,14 @@ import { filter } from 'rxjs/operators';
 })
 export class HeaderComponent {
   isLoginPage = false;
+  isMainPage = false;
 
   constructor(private router: Router) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.isLoginPage = event.urlAfterRedirects === '/login';
+        this.isMainPage = event.urlAfterRedirects === '/main';
       });
   }
 }

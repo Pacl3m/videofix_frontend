@@ -1,4 +1,5 @@
 .site-header {
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,11 +10,19 @@
     left: 5rem;
     right: 5rem;
 
-    .logo {
+    .logo_container {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
         cursor: pointer;
-        img {
-            width: 200px;
+
+        .logo_big {
+            // width: 200px;
             height: 32px;
+        }
+
+        .logo_text {
+            // height: fit-content;
         }
     }
 
