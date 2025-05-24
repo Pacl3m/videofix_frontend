@@ -13,18 +13,15 @@
 
             <div class="video-wrapper-top">
                 <div class="video-description">
-                    <h2>Stromberg</h2>
-                    <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem nesciunt enim in quis
-                        fuga animi rem impedit vitae? Blanditiis veniam quasi assumenda libero tenetur quis nam
-                        excepturi?
-                        Quasi, iste asperiores?</span>
+                    <h2>{{ currentVideo?.title }}</h2>
+                    <span>{{ currentVideo?.description }}</span>
                     <div class="cta-button">
                         <img src="../../assets/img/mainImg/play_arrow.svg" alt="Log Out" width="24" height="24">Play
                     </div>
                 </div>
 
-                <div class="video-description-spacer">
-                </div>
+                <!-- <div class="video-description-spacer">
+                </div> -->
             </div>
 
             <div class="video-wrapper-botton"></div>
@@ -33,12 +30,16 @@
                 <h3>New on Videoflix </h3>
                 <div class="videos-container">
 
-                    <app-videobox [imageUrl]="'../../assets/img/videoImg/test.jpg'"
+                    <!-- <app-videobox [imageUrl]="'../../assets/img/videoImg/test.jpg'"
                         [videoSrc]="'../../assets/videos/268290_small.mp4'" [altText]="'Ein Video'"
                         (videoSelected)="onVideoChange($event)"></app-videobox>
                     <app-videobox [imageUrl]="'../../assets/img/videoImg/test.jpg'"
                         [videoSrc]="'../../assets/videos/275633_small.mp4'" [altText]="'Ein Video'"
-                        (videoSelected)="onVideoChange($event)"></app-videobox>
+                        (videoSelected)="onVideoChange($event)"></app-videobox> -->
+
+                    <app-videobox *ngFor="let video of videos" [imageUrl]="video.thumbnail" [videoSrc]="video.videoSrc"
+                        [altText]="video.title" (videoSelected)="onVideoChange($event)">
+                    </app-videobox>
 
                 </div>
             </div>
